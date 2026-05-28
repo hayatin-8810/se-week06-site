@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        /* Base Styles */
+        :root {
+            --bg-color: #f8f9fa;
+            --text-color: #333333;
+            --primary-color: #2563eb;
+            --card-bg: #ffffff;
+            --border-color: #e5e7eb;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        /* Navigation */
+        header {
+            background-color: var(--card-bg);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        nav {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            padding: 1rem;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Container & Sections */
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            scroll-margin-top: 70px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.3rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        /* Skills Tag Cloud */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        /* Works Grid */
+        .works-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .work-card {
+            border: 1px solid var(--border-color);
+            padding: 1rem;
+            border-radius: 6px;
+            background-color: var(--bg-color);
+        }
+
+        .work-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Utility */
+        .lead {
+            text-align: center;
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        /* Mobile Optimization */
+        @media (min-width: 600px) {
+            body {
+                padding-top: 1rem;
+            }
+            nav a {
+                font-size: 1rem;
+            }
+            .works-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#works">Works</a>
+            <a href="#reflection">Reflection</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Portfolio</h1>
+        <p class="lead">フロントエンド開発とデザインの学習記録</p>
+
+        <section id="about">
+            <h2>About</h2>
+            <p>Web技術に関心を持つデベロッパー / クリエイターです。シンプルな記述で、誰にとっても扱いやすく、高速に動作するWebサイトの制作を意識しています。</p>
+            <p>現在はアクセシビリティや、JavaScriptを用いた動的なUI表現について学んでいます。プライバシーとセキュリティに配慮し、必要最低限の個人情報のみを公開しています。</p>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <p>これまでに触れてきた技術やツールのスタックです。</p>
+            <div class="skills-container">
+                <span class="skill-tag">HTML5 / CSS3</span>
+                <span class="skill-tag">JavaScript (ES6+)</span>
+                <span class="skill-tag">Responsive Design</span>
+                <span class="skill-tag">UI/UX Design</span>
+                <span class="skill-tag">Git / GitHub</span>
+                <span class="skill-tag">VS Code</span>
+            </div>
+        </section>
+
+        <section id="works">
+            <h2>Works</h2>
+            <div class="works-grid">
+                <div class="work-card">
+                    <h3>01. 静的ポートフォリオサイト</h3>
+                    <p>外部ライブラリを一切使わず、HTMLとCSSのみで軽量に構築した自己紹介サイトです。レスポンシブ対応を施しています。</p>
+                </div>
+                <div class="work-card">
+                    <h3>02. タスク管理モックアップ</h3>
+                    <p>ブラウザのローカルストレージを活用し、ページを閉じてもデータが残るシンプルなTODOアプリの実装を計画中です。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="reflection">
+            <h2>Reflection</h2>
+            <p><strong>これまでの振り返り：</strong><br>
+            フレームワークや外部ライブラリに頼る前に、生のリソース（バニラHTML/CSS/JS）だけでどこまで表現できるかに挑戦しました。制限を設けることで、各言語のコアとなる仕様への理解が深まりました。</p>
+            <p><strong>今後の課題：</strong><br>
+            スマートフォンでの視認性は確保できたため、今後はキーボード操作のみでのナビゲーションや、スクリーンリーダーへの対応など、Webアクセシビリティの向上に注力したいと考えています。</p>
+        </section>
+    </main>
+
+    <script>
+        // スムーススクロールなどの簡易的な挙動制御（JS）
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
